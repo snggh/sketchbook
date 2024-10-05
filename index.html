@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #project-selector {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #project-frame {
+            flex-grow: 1;
+            border: none;
+            display: none;
+        }
+    </style>
+    <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+    <select id="project-selector">
+        <option value="">Select a project</option>
+    </select>
+    <iframe id="project-frame"></iframe>
+</body>
+</html>

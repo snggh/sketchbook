@@ -31,8 +31,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "init": "mkcert -install && mkcert localhost 127.0.0.1 ::1",
-    "dev": "vite --config ./vite.config.js",
-    "build": "rm -rf dist && vite build --config ./vite.config.js",
+    "dev": "vite",
+    "build": "vite build",
     "create": "plop"
   },
   "browserslist": "> 0.5%, chrome 95, last 2 versions, not dead",
