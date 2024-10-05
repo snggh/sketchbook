@@ -1,13 +1,23 @@
 import { defineConfig } from 'vite'
-const fs = require('node:fs');
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import fs from 'fs'
 
-export default defineConfig({
-  server: {
-    port: 1987,
-    host: true,
-    https: {
-      key: fs.readFileSync('localhost-key.pem'),
-      cert: fs.readFileSync('localhost.pem')
+export default defineConfig(({ mode }) => {
+  const projectName = process.env.PROJECT || 'apple-airpods-demo'
+  const projectPath = path.resolve(__dirname, 'src', projectName)
+
+  if (!fs.existsSync(projectPath)) {
+    console.error(`Project "${projectName}" does not exist in the src directory.`)
+    process.exit(1)
+  }
+
+  return {
+    root: projectPath,
+    plugins: [react()],
+    server: {
+      port: 1987,
+      host: true
     }
   }
 })
